@@ -1,0 +1,81 @@
+.gameHud{
+	border-radius:10px;
+	margin:1em auto;
+	overflow: hidden;
+	background-color: black;
+}
+.mobile_dwld{
+	display:none;
+}
+.preloadGame{
+	background:no-repeat  url("../game_src/img/titles1/Preload.jpg");
+	background-size: cover;
+	
+	transition: 0.4s;
+}
+.preloadGame:hover{
+	background:no-repeat  url("../game_src/img/titles1/Preload_hover.jpg");
+	background-size: cover;
+}
+@media (max-width: 784px) {
+	.playOnline{
+		display: none;
+	}
+	.mobile_dwld{
+		display:block;
+	}
+}
+
+@media (min-width: 785px) {
+	.gameHud{
+		width:740px;
+		height:416px;
+		display: block;
+	}
+}
+@media (min-width: 980px) {
+	.gameHud{
+		width:872px;
+		height:490px;
+	}
+}
+@media (min-width: 980px) {
+	.gameHud{
+		width:872px;
+		height:490px;
+	}
+}
+@media (min-width: 1200px) {
+	.gameHud{
+		width:1180px;
+		height:664px;
+	}
+}
+@media (min-width: 1300px) {
+	.gameHud{
+		width:1280px;
+		height:720px;
+	}
+}
+.mdi-36px {
+	font-size: 39px;
+	margin-right: 10px;
+}
+.fullScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+	z-index: 2;
+}
+
+.disabled{
+	filter: saturate(0%);
+	color:grey;
+	opacity:10;
+}
+#gamePlayer{
+	background-color: black;
+}
+#game{
+	background-color: black;
+}

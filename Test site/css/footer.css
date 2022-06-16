@@ -1,0 +1,10 @@
+.main_footer{
+	background-color: transparent;
+	background-image: linear-gradient(to top, black, rgba(0, 0, 0,.8) 50%, rgba(10, 10, 10,.2) 75%, transparent );
+	box-shadow: -6px 0px 12px black;
+	position:relative;
+	margin-top:0px;
+	bottom: 0px;
+	width: 100%;
+	box-shadow:inset -12px 0px 0px black;
+}

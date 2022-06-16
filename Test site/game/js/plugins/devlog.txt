@@ -1,0 +1,47 @@
+Dans ce devlog, nous allons essayer ensemble de développer des systemes de gameplay
+diffrents avec rmmv en se servant d'events et/ou de scripts.
+
+L'objectif faire un jeu ou on gère des entreprise.
+
+Quelle domaine l'entreprise ?
+
+Partons sur 7 modèles qui nous serviront de support à ajouter n'importe quel domaine.
+Industrialisons...Recyclons... et Developpons...
+
+Services
+>Lieux
+	>Studio
+	>Salle de concert
+	>Boite de nuit
+	>Club de striptease
+	>Casino
+	
+	
+	>Terrain nu
+	>Bureaux
+	>Entrepots
+	>Ateliers
+	>Boutique
+
+	"nom":"Parti politique",
+	"but":"se faire élire ",
+	"rang":["Conseiller municipal","Adjoint du maire",""],
+	bureau politique
+		>agent d'acceuil
+		>secrétaire
+		>opérateur téléphonique
+		>millitant
+		>
+
+
+		action
+			tracter
+			
+Je fais mon brain storming et il va très vite y avoir du bordel.
+Il faut trouver une piste de recherche et une méthode d'organisation.
+
+Je vais jouer à des jeux ou il y a de la gestion et prendre de l'inspi en attendant.
+
+Deux semaines de partie de Sims, Simcity, industry giant, CityVille, Fallout Shelter...
+Je suis enfin près ! On attaque !!!
+

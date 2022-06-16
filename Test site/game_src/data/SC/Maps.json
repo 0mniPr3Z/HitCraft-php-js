@@ -1,0 +1,9 @@
+[
+	null,
+	{	"id":1,	"mapName":"Map Test",
+		"encounterList":[
+			{	"id":1,	"eventId":10, "enemyId":1, "respawnPoint":[19, 16]
+			}
+		]
+	}
+]

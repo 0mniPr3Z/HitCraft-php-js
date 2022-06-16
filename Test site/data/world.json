@@ -1,0 +1,51 @@
+[null,
+	{
+		"id":			1,
+		"name_fr":		"Abri",
+		"name_en":		"Vault",
+		"descript_fr":	"L'Abri Anti-atomique où vous vous êtes réveillé.",
+		"descript_en":	"The anti-atomic vault where you awake.",
+		"city_map":{
+			"pos":{
+				"x":100,
+				"y":110
+			}
+		},
+		"local_map":{
+			"mapId":10,
+			"spawn":[
+				{
+					"enemyId":1,
+					"x":10,
+					"y":25,
+					"type":"distant",
+					"range":12,
+					"animId":1
+				},
+				{
+					"enemyId":1,
+					"x":10,
+					"y":25,
+					"type":"range",
+					"range":4,
+					"animId":1
+				},
+				{
+					"name":		"Assault massif",
+					"switch":{
+						"x":		10,
+						"y":		25,
+						"range":	[0, 5],
+						"chance":	0.7
+					},
+					"action":{
+						"type":		"events",
+						"eventId": 	[10, 12, 13, 14, 15],
+						"animId":	[10, 12, 13, 14, 15]
+					}
+				}
+			]
+		}
+	}
+
+]

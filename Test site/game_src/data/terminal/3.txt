@@ -1,0 +1,10 @@
+###################################
+#    Terminal du superviseur de l'Abri 108    #
+###################################
+
+@>Réacteur à fusion endommagé.
+@>Faille dans le système de purification
+@>Lancement de l'évacuation d'urgence.
+@>Tout le personnel est prié de se rendre
+  >à la sortie la plus proche
+  >en gardant son calme.\!

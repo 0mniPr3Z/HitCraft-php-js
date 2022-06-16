@@ -1,0 +1,10 @@
+###################################
+#    Terminal du superviseur de l'Abri 108    #
+###################################
+
+@>Déverouillage de toutes les portes.
+@>Ouverture du caisson VEF.
+@>Sujet en réanimation.
+
+ -- FIN DE TRANSMISSION --\!
+ 

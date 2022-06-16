@@ -1,0 +1,13 @@
+[	{
+		"stats":[
+			"Force = atk",
+			"Resistance = def",
+			"Agilité = agi",
+			"Perception = magie"
+		]
+	},
+	{	"id":1,
+		"characterName":"Iban"
+	}
+
+]

@@ -1,0 +1,67 @@
+[
+	null,
+	{	"id":1,		"name":"plomb",
+		"loaderName":"sac",
+		"unitName":"bille"
+	},
+	{	"id":2,		"name":".44",
+		"loaderName":"boite",
+		"unitName":"balle"
+	},
+	{	"id":3,		"name":".38",
+		"loaderName":"chargeur",
+		"unitName":"balle"
+	},
+	{	"id":4,		"name":"10mm",
+		"loaderName":"chargeur",
+		"unitName":"balle"
+	},
+	{	"id":5,		"name":"énergie",
+		"loaderName":"batterie",
+		"unitName":"kwh"
+	},
+	{	"id":6,		"name":"calibre 12",
+		"loaderName":"boite",
+		"unitName":"cartouche"
+	},
+	{	"id":7,		"name":"calibre 12",
+		"loaderName":"chargeur",
+		"unitName":"cartouche"
+	},
+	{	"id":8,		"name":".45",
+		"loaderName":"chargeur",
+		"unitName":"cartouche"
+	},
+	{	"id":9,		"name":"303",
+		"loaderName":"boite",
+		"unitName":"balle"
+	},
+	{	"id":10,	"name":"7.62",
+		"loaderName":"chargeur",
+		"unitName":"balle"
+	},
+	{	"id":11,	"name":"5.56",
+		"loaderName":"chargeur",
+		"unitName":"balle"
+	},
+	{	"id":12,	"name":"2mm EM",
+		"loaderName":"chargeur",
+		"unitName":"cartouche"
+	},
+	{	"id":13,	"name":"5mm",
+		"loaderName":"chargeur",
+		"unitName":"cartouche"
+	},
+	{	"id":14,	"name":"carburant",
+		"loaderName":"baril",
+		"unitName":"litre"
+	},
+	{	"id":15,	"name":"missile",
+		"loaderName":"containeur",
+		"unitName":"missile"
+	},
+	{	"id":16,	"name":"plasma",
+		"loaderName":"recipiant",
+		"unitName":"litre"
+	}
+]

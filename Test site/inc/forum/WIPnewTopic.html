@@ -1,0 +1,411 @@
+<style>
+		.texteditor {
+	width: 650px;
+	height: 250px;
+	position: relative;
+	margin: 0px auto;
+	outline:none;
+	padding : 15px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 15px;
+	 box-shadow : 0px 10px 20px 0px rgba(0,0,0,0.8);
+	overflow : hidden;
+  
+  }
+  
+  .tooltip {
+	margin: 25px 135px;
+  }
+  
+  button {
+	border-radius: 2px;
+	background-color: white;
+	border: none;
+	border-radius: 6px;
+	color: #7e7e7e;
+	font-size: 18px;
+	padding: 7px;
+	 box-shadow : 0px 10px 20px 0px rgba(0,0,0,0.25);
+  }
+  
+  button:hover {
+	color: black;
+	border: 1.5px solid grey;
+  }
+  
+  .bold {
+	width: 35px;
+	height: 45px;
+	cursor: pointer;
+	outline:none;
+  }
+  
+  .italics {
+	width: 35px;
+	height: 45px;
+	cursor: pointer;
+	outline:none;
+  }
+  
+  .underline {
+	width: 35px;
+	height: 45px;
+	cursor: pointer;
+	outline:none;
+  }
+  .size{
+	height : 46px;
+   }
+  .link {
+	width: 36px;
+	height: 45px;
+	cursor: pointer;
+	outline:none;
+	color : grey;
+	font-size:18px;
+  }
+  .color:hover {
+	border-color: black;
+	color: inherit;
+  }
+  select {
+	 height: 25px;
+	 width: 45px;
+	 font-size: 14px;
+	 font-weight: bold;
+	 color: grey;
+	 background: #fafafa;
+	 border: 1px solid #d3d3d3;
+	 border-radius: 3px;
+	 outline: none;
+	 cursor: pointer;
+  }
+  select:hover{
+	color:black;
+  }
+  a{
+	cursor:pointer;
+  }
+</style>
+
+<input type="button" value="afficher selection" onclick="getSelection('#topicform_ctt');"/>
+
+<form method="post" action="#" class="" >
+	
+
+	<div class="tooltip EDITOR">
+		<input type="button" value="G"  onclick="insertTag('[b]','[/b]','CONTENU_ID');" />
+		<input type="button" value="I" />
+		<input type="button" value="Lien" />
+		<input type="button" value="Image" />
+		<input type="button" value="Citation" />
+		<select onchange="insertTag('[' + this.options[this.selectedIndex].value + ']', '[/' + this.options[this.selectedIndex].value + ']');">
+			<option value="none" class="selected" selected="selected">Taille</option>
+			<option value="ttpetit">Très très petit</option>
+			<option value="tpetit">Très petit</option>
+			<option value="petit">Petit</option>
+			<option value="gros">Gros</option>
+			<option value="tgros">Très gros</option>
+			<option value="ttgros">Très très gros</option>
+		</select>
+		<select onchange="insertTag('[' + this.options[this.selectedIndex].value + ']', '[/' + this.options[this.selectedIndex].value + ']', 'CONTENT_ID');">
+			<option value="none" class="selected" selected="selected">
+				<img src="smile.gif" alt="smiley" />
+			</option>
+			<option value="ttpetit">
+				<img src="unsure2.gif" alt="smiley" />
+			</option>
+			<option value="tpetit">
+				<img src="unsure2.gif" alt="smiley" />
+			</option>
+			<option value="petit">
+				<img src="unsure2.gif" alt="smiley" />
+			</option>
+			<option value="gros">
+				<img src="unsure2.gif" alt="smiley" />
+			</option>
+		</select>
+	</div>
+
+	<span>
+		<label for="TITRE_ID">
+			TITRE_LABEL
+		</label>
+		<input type="text" name="TITRE_ID" id="TITRE_ID" placeholder="DEFAULT_TITRE">
+	</span>
+	<br>
+	<span>
+		<label for="CONTENU_ID">
+			CONTENU_LABEL
+		</label>
+		<textarea
+			class="" style="width:100%; min-width:100%;height:400px;"
+			cols="150" rows="10"
+			id="CONTENU_ID"					name="CONTENU_ID"
+			placeholder="DEFAULT_CONTENU"
+		></textarea>
+	<span>
+
+	<div>
+		<input type="submit" name="ENVOYER_ID" value="ENVOYER_NM" onclick="view('CONTENU_ID','PREVIEW_DIV_ID');">
+		<input type="button" value="Visualiser" onclick="view('CONTENU_ID','PREVIEW_DIV_ID');" />
+		<input name="PREVIEW_ID" type="checkbox" id="PREVIEW_ID" value="PREVIEW_VALUE" />
+			<label for="PREVIEW_ID">PREVIEW_LABEL</label>
+	</div>
+	<div id="PREVIEW_DIV_ID"></div>
+</form>
+
+<script>
+	function insertTag(startTag, endTag, textareaId, tagType) {
+		var field  = document.getElementById(textareaId); 
+		var scroll = field.scrollTop;
+		field.focus();
+			
+		if (window.ActiveXObject) { // C'est IE
+			var textRange = document.selection.createRange();            
+			var currentSelection = textRange.text;
+					
+			textRange.text = startTag + currentSelection + endTag;
+			textRange.moveStart("character", -endTag.length - currentSelection.length);
+			textRange.moveEnd("character", -endTag.length);
+			textRange.select();     
+		} else { // Ce n'est pas IE
+			var startSelection   = field.value.substring(0, field.selectionStart);
+			var currentSelection = field.value.substring(field.selectionStart, field.selectionEnd);
+			var endSelection     = field.value.substring(field.selectionEnd);
+					
+			field.value = startSelection + startTag + currentSelection + endTag + endSelection;
+			field.focus();
+			field.setSelectionRange(startSelection.length + startTag.length, startSelection.length + startTag.length + currentSelection.length);
+		} 
+
+		field.scrollTop = scroll; // et on redéfinit le scroll.
+	}
+	function view(textareaId, previewdivId){
+		var srcElem = document.getElementById(textareaId);
+		var trgtElem = document.getElementById(previewdivId);
+		//trgtElem.innerHTML = <?php convertEscapeCode(srcElem.innerText)?>;
+		trgtElem.innerHTML = proceedEscTags(srcElem.value);
+	}
+	function proceedEscTags(str){
+		var res = "";
+		var tag = "";
+		var param = "";
+		var idCntr = 0;
+		var intag = false;
+		var inparam =false;
+		var srt = " "+ str;
+		var artId = 1;
+		
+		var lastTag = "";
+
+		for(var i = 0; i < str.length; i++){
+			
+			if(lastTag == "script" || lastTag == "script="){
+				if(str[i] == '['){
+					var pretag = str[i]+str[i+1]+str[i+2]+str[i+3]+str[i+4]+str[i+5]+str[i+6]+str[i+7]+str[i+8];
+					if(pretag == '[/script]'){
+						i += 8;
+						idCntr++;
+						id = artId+'_'+idCntr;
+						intag = false;
+						lastTag = "/script";
+						res += convertScTag('/script', "", id);
+					}else{
+						res+= str[i];
+					}
+				}else{
+					res+= str[i];
+
+				}
+			}else if(str[i] == '\\'){
+			}else if(inparam){
+				if(str[i] != ']' && i < str.length){
+					param += str[i];
+				}else if(str[i] == ']'){
+					idCntr++;
+					inparam = false;
+					intag = false;
+					id = artId+'_'+idCntr;
+					lastTag = tag;
+					res += convertScTag(tag, param, id);
+				}
+			}else if(intag){
+				if(tag == "color=" || tag == "url=" || tag == "quote=" ||  tag == "size=" || tag == "img="){
+					inparam = true;
+					param = str[i];
+				}else if(str[i] != ']'){
+					tag += str[i];
+				}else if(str[i] == ']'){
+					idCntr++;
+					id = artId+'_'+idCntr;
+					intag = false;
+					lastTag = tag;
+					res += convertScTag(tag, param, id);
+				}
+			}else if(str[i] == '[' && str[i - 1] != '\\'){
+				intag = true;
+				inparam = false;
+				tag = "";
+				param = "";
+			}else{
+				res+= hydrateScCode(str[i]);
+			}
+		}
+		return nl2br(res, false);
+	}
+	function nl2br (str, is_xhtml) {
+		if (typeof str === 'undefined' || str === null) {
+			return '';
+		}
+		var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+		return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+	}
+	function hydrateScCode(str){
+		var ret = str.replace('"', '\"');
+		ret = str.replace("'", "\'");
+		ret = str.replace("<", "\<'");
+		return ret;
+	}
+	function convertScTag(tag, param, id){
+		console.log(tag);
+		switch(tag.toLowerCase()){
+			case 'img':
+				return '<img style="max-width:100%" alt="img" src="'; 
+			break;
+			case 'img=':
+				return '<img style="max-width:100%"  alt="'+hydrateScCode(param)+'" src="'; 
+			break;
+			case '/img':
+				return '">'; 
+			break;
+			case 'b':
+				return '<b>'; 
+			break;
+			case '/b':
+				return '</b>'; 
+			break;
+			case 'i':
+				return '<i>'; 
+			break;
+			case '/i':
+				return '</i>'; 
+			break;
+			case 'u':
+				return '<u>'; 
+			break;
+			case '/u':
+				return '</u>'; 
+			break;
+			case 'strike':
+				return '<strike>'; 
+			break;
+			case '/strike':
+				return '</strike>'; 
+			break;
+			case 'center':
+				return '<p style="text-align: center">'; 
+			break;
+			case '/center':
+				return '</p>'; 
+			break;
+			case 'left':
+				return '<p style="text-align: left">'; 
+			break;
+			case '/left':
+				return '</p>'; 
+			break;
+			case 'right':
+				return '<p style="text-align: right">'; 
+			break;
+			case '/right':
+				return '</p>'; 
+			break;
+			case 'justify':
+				return '<p style="text-align: justify">'; 
+			break;
+			case '/justify':
+				return '</p>'; 
+			break;
+			case 'color=':
+				return '<font color="'+hydrateScCode(param)+'">'; 
+			break;
+			case '/color':
+				return '</font>'; 
+			break;
+			case 'bgcolor=':
+				return '<font style="background-color:'+hydrateScCode(param)+';">'; 
+			break;
+			case '/bgcolor':
+				return '</font>'; 
+			break;
+			case 'url=':
+				return '<a href="' + hydrateScCode(param) + '">'; 
+			break;
+			case '/url':
+				return '</a>'; 
+			break;
+			case 'quote':
+				return '<fieldset class="topic_quote">'; 
+			break;
+			case 'quote=':
+				return '<fieldset class="topic_quote"><legend>' + getEscapeScQuote(param) + '</legend>'; 
+			break;
+			case '/quote':
+				return '</fieldset>'; 
+			break;
+			case 'spoiler':
+				return '<div class="spoiler"><div class="spoiler-btn">Afficher/Masquer le text</div><div class="spoiler-body">'; 
+			break;
+			case 'spoiler=':
+				return '<div class="spoiler"><div class="spoiler-btn">'+getEscapeScQuote(param)+'</div><div class="spoiler-body">';
+			break;
+			case '/spoiler':
+				return '</div></div>'; 
+			break;
+			case 'script':
+				return '<pre class="scriptbox"><code class="scriptcontent language-javascript">'; 
+			break;
+			case 'script=':
+				return '<pre class="scriptbox"><code class="scriptcontent language-'+getEscapeScQuote(param)+'">'; 
+			break;
+			case '/script':
+				return '</code></pre>'; 
+			break;
+			case 'youtube':
+				return '<iframe width="560" height="315" src="https://www.youtube.com/embed/'; 
+			break;
+			case '/youtube':
+				return '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'; 
+			break;
+			case 'size=':
+				return '<span style="font-size:' + Math.floor(Math.max( min(intval(param), 24), 8)) + 'px;">'; 
+			break;
+			case '/size':
+				return '</span>'; 
+			break;
+			case 'tab':
+				return '<i style="width:2em; min-width:2em; display:inline-block;"></i>';
+			break;
+			case 'title':
+				return '<p style="font-size:2.4em;text-align:center;">';
+			break;
+			case '/title':
+				return '</p>';
+			break;
+			case 'subtitle':
+				return '<p class="subtitlpost"><i class="fa-solid fa-radiation"></i> ';
+			break;
+			case '/subtitle':
+				return '</p>';
+			break;
+			case 'hr':
+				return '<hr style="width:50%; margin: auto">';
+				break;
+			default:
+				return "";
+			break;
+		}
+	}
+</script>

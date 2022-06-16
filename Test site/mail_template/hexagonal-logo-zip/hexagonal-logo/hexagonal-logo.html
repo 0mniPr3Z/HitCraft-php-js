@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Email Signature</TITLE>
+<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+</HEAD>
+<BODY style="font-size: 10pt; font-family: Arial, sans-serif;">
+
+<table width="480" style="font-size: 11pt; font-family: Arial, sans-serif;" cellpadding="0" cellspacing="0" border="0">
+<tbody>
+ <tr>
+  
+  <td ng-if="showField('logo')" width="160" style="font-size: 10pt; font-family: Arial, sans-serif; width: 160px; vertical-align: top;" valign="top">
+		<a href="{logoURL}" target="_blank"><img border="0" alt="Logo" width="125" style="width:125px; height:auto; border:0;" src="logo.png"></a>
+		  
+  </td>
+ 
+ <td valign="top" width="270" style="width:270px; vertical-align: top; line-height:11px; border-right:2px solid #29abe1">
+	
+	<table cellpadding="0" cellspacing="0" border="0" width="270">
+	<tbody>
+		<tr>
+			<td style="font-size:12pt; height:14px; line-height:14px"><strong style="font-family: Arial, sans-serif;font-size: 12pt;color:#29abe1;">{firstName} {lastName}</strong></td>
+		</tr>
+		<tr>
+			<td style="font-size:9pt; height:14px; line-height:14px">
+				<span style="font-family: Arial, sans-serif; font-size:9pt; color:#000000;">{title}</span>
+				<span style="font-family: Arial, sans-serif; font-size:9pt; color:#000000;" > | {company}</span>			
+			</td>
+		</tr>
+		<tr>
+			<td style="height:14px; line-height:14px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="font-size:9pt; height:14px; line-height:14px">
+				<span style="font-family: Arial, sans-serif;color:#000000;FONT-SIZE: 9pt"><strong>M</strong> {mobile}</span>
+				<span style="font-family: Arial, sans-serif;color:#000000;FONT-SIZE: 9pt"> | <strong>P</strong> {phone}</span>			
+			</td>
+		</tr>
+		<tr>
+			<td style="font-size:9pt; height:12px; line-height:12px">
+				<span style="font-family: Arial, sans-serif;color:#000000;FONT-SIZE: 9pt"><strong>E</strong>  {email}</span>		
+			</td>
+		</tr>	
+		<tr>
+			<td style="height:14px; line-height:14px">&nbsp;</td>
+		</tr>		
+		<tr>
+			<td style="font-size:9pt; height:12px; line-height:12px">
+				<span style="font-family: Arial, sans-serif;color:#000000;FONT-SIZE: 9pt">{address1}, {address2}</span>		
+			</td>
+		</tr>	
+		
+		<tr>
+			<td style="font-size:9pt; height:12px; line-height:12px">
+				<a href="http://{website}" target="_blank" rel="noopener" style=" text-decoration:none;"><strong style="color:#29abe1; font-family:Arial, sans-serif; font-size:9pt">{website}</strong></a>	
+			</td>
+		</tr>	
+	<tbody>		
+	</table>
+
+		
+		
+
+  </td>
+  
+  <td style="vertical-align: top; padding-left:10px" valign="top" width="35">
+		
+		<table cellpadding="0" cellspacing="0" border="0" width="25">
+			<tr >
+				<td width="25" height="30" valign="top" style="vertical-align: top;"><a href="{facebookURL}" target="_blank" rel="noopener"><img border="0" width="26" height="25" src="fb.png" alt="facebook icon" style="border:0; height:25px; width:26px;"></a></td>
+			</tr>
+			<tr >
+				<td width="25" height="30" valign="top" style="vertical-align: top;"><a href="{twitterURL}" target="_blank" rel="noopener"><img border="0" width="26" height="25" src="tt.png" alt="twitter icon" style="border:0; height:25px; width:26px;"></a></td>
+			</tr>
+			<tr >
+				<td width="25" height="30" valign="top" style="vertical-align: top;"><a href="{youtubeURL}" target="_blank" rel="noopener"><img border="0" width="26" height="25" src="yt.png" alt="youtube icon" style="border:0; height:25px; width:26px"></a></td>
+			</tr>			
+		</table>
+
+  </td>
+  
+  <td style="vertical-align: top;" valign="top" width="25">
+  
+		<table cellpadding="0" cellspacing="0" border="0" width="25">	
+			<tr><td style="height:12px; font-size:1px" height="12">&nbsp;</td></tr>
+			<tr >
+				<td width="25" height="30" valign="top" style="vertical-align: top;"><a href="{linkedinURL}" target="_blank" rel="noopener"><img border="0" width="26" height="25" src="ln.png" alt="linkedin icon" style="border:0; height:25px; width:26px;"></a></td>
+			</tr>
+			<tr >
+				<td width="25" height="30" valign="top" style="vertical-align: top;"><a href="{instagramURL}" target="_blank" rel="noopener"><img border="0" width="26" height="25" src="it.png" alt="instagram icon" style="border:0; height:25px; width:26px;"></a></td>
+			</tr>
+			<tr >
+				<td width="25" height="30" valign="top" style="vertical-align: top;"><a href="{pinterestURL}" target="_blank" rel="noopener"><img border="0" width="26" height="25" src="pt.png" alt="pinterest icon" style="border:0; height:25px; width:26px"></a></td>
+			</tr>			
+		</table>
+ 
+  </td>
+  
+	  
+ </tr> 
+ 
+ <tr>
+	<td colspan="4" style="padding-top:15px;">
+			<a href="{bannerURL}" target="_blank" rel="noopener"><img border="0" src="banner.png" alt="Banner" width="479" style="max-width:479px; height:auto; border:0;"></a>
+	</td>
+  </tr>
+  
+ <tr>
+	<td colspan="4" style="padding-top:15px; line-height:14px; font-size: 7.5pt; color: #808080; font-family: Arial, sans-serif;">{ disclaimer }</td>
+  </tr>
+</tbody>
+</table>
+
+</BODY>
+</HTML>

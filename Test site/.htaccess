@@ -1,0 +1,52 @@
+# On suit les liens symboliques 
+Options +FollowSymlinks 
+# Activation du mod rewrite d'Apache 
+RewriteEngine On 
+
+# Réécriture de index.html vers index.php
+RewriteRule ^index\.html$																						index.php?pg=1
+RewriteRule ^Home$																								index.php?pg=1
+RewriteRule ^Acceuil$																							index.php?pg=1
+RewriteRule ^home$																								index.php?pg=1
+RewriteRule ^acceuil$																							index.php?pg=1
+
+#BLOG
+RewriteRule ^Blog$																								index.php?pg=2
+RewriteRule ^Blog-([a-z_]+)-([0-9]+)$																			index.php?pg=2&pg2=$1&pg3=$2
+RewriteRule ^blog$																								index.php?pg=2
+RewriteRule ^blog-([a-z_]+)-([0-9]+)$																			index.php?pg=2&pg2=$1&pg3=$2
+
+#DEVLOG
+RewriteRule ^Devlog$																							index.php?pg=3
+
+#FORUM
+RewriteRule ^Forum$																								index.php?pg=4
+RewriteRule ^Forum-([A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_]+)$						index.php?pg=4&pg2=$1
+RewriteRule ^Forum-([A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_]+)-page_([0-9]+)$		index.php?pg=4&pg2=$1&pagin=$2
+RewriteRule ^Forum-([A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_]+)-([A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_]+)$ \
+index.php?pg=3&pg2=$1&pg3=$2
+RewriteRule ^Forum-([A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_]+)-([A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_]+)-page_([0-9]+)$ \
+index.php?pg=3&pg2=$1&pg3=$2&pagin=$3
+
+
+
+
+RewriteRule ^A_Propos$																							index.php?pg=4
+RewriteRule ^Jouer$																								index.php?pg=5
+RewriteRule ^Ressources$																						index.php?pg=6
+RewriteRule ^Connexion$																							index.php?pg=7
+RewriteRule ^Ressources-Graphisme$																				index.php?pg=8
+RewriteRule ^Ressources-Audio$																					index.php?pg=9
+RewriteRule ^Ressources-Scripts$																				index.php?pg=10
+RewriteRule ^Inscription$																						index.php?pg=16
+RewriteRule ^Mot_de_Passe_oublié$																				index.php?pg=18
+RewriteRule ^Mail-([A-Za-z]+)-([0-9]+)$																			index.php?pg=19pg2=$1&pg3=$2
+
+RewriteRule ^Edition$																							index.php?pg=16
+RewriteRule ^Edition-([0-9]+)$																					index.php?pg=16&pg2=$1
+RewriteRule ^Edition-([0-9]+)-(fr|en)$																			index.php?pg=16&pg2=$1&pg3=$2
+RewriteRule ^Deconnexion$																						index.php?pg=20
+
+ErrorDocument 404																								error/404.php
+ErrorDocument 401																								error/denied.php
+ErrorDocument 500																								error/server_err.php

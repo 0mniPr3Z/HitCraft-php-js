@@ -1,0 +1,10 @@
+###################################
+#    Terminal du superviseur de l'Abri 108    #
+###################################
+
+@> Lancement de la procédure de maintenance.
+  > Dernière Mise à jour :\..\..\..
+  > il y a plus de 999 jour(s).\|\|
+@> Diagnostic du complexe.\..\..\..
+@> Verification de l'état des sujets
+    > Chargement des données \..\..\..\!
