@@ -1,3 +1,3 @@
 <?php
-	$DEBUG = true;
+	$DEBUG = false;
 ?>

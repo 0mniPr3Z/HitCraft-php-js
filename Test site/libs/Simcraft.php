@@ -8,12 +8,6 @@ Class Simcraft {
 	private $password	= DB_PASSWORD;
 	public $domain		= DOMAINE_NAME;
 	public $adressOfficial = "5 rue de la sorbonne";
-	/*
-	private $host		= "cl1-sql12";
-	private $dbname		= "fdv43011";
-	private $username	= "fdv43011";
-	private $password	= "5OtjwMLY6lI2";
-	*/
 	//INITIALIZE
 	public function __construct($vocab){
 		$this->activate = true;
